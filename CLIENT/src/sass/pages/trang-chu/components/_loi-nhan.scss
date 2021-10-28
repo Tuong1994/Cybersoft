@@ -1,0 +1,22 @@
+.note {
+  background: $dark-2;
+  padding: $p-10 * 5 $p-10 * 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .note__message {
+    text-align: center;
+    color: $tWhite;
+    font-size: $subtitle-1;
+    .message {
+      margin: 0;
+    }
+    @include respond(tablet) {
+        font-size: $body-2;
+        text-align: justify;
+    }
+  }
+  @include respond(tablet) {
+      padding: $p-10 * 5 $p-10;
+  }
+}

@@ -1,0 +1,31 @@
+.student-reviews {
+  padding: $p-10 * 5 $p-10 * 10;
+  .student-reviews__images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .images__wrapper {
+      width: $w-100 / 3.5;
+      margin-bottom: $m-10 * 2;
+      transition: all 0.1s linear;
+      .img {
+        width: $w-100;
+      }
+      &:hover {
+        border: 5px solid transparent;
+        border-image: $gradient-purple-right;
+        border-image-slice: 1;
+      }
+      @include respond(tablet) {
+        width: $w-100 / 2;
+      }
+      @include respond(smallPhone) {
+        width: $w-100;
+      }
+    }
+  }
+  @include respond(extraTablet) {
+    margin-top: $m-10 * 7;
+    padding: $p-10;
+  }
+}

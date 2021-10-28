@@ -1,0 +1,38 @@
+.form__group--select {
+  width: $w-100;
+  margin: $m-10 * 1.5 0;
+  .group__content {
+    width: $w-100;
+    position: relative;
+    .content__input {
+      width: $w-100;
+      padding: $p-10 * 1.5;
+      font-size: $body-4;
+      border: 1px solid $border--white;
+      border-radius: $radius-5;
+      outline: none;
+      color: $tWhite;
+      background: transparent;
+      &:focus + .content__name,
+      &:not(:placeholder-shown) + .content__name {
+        top: -25%;
+        background: $purple-1;
+        padding: 0 $p-10;
+      }
+    }
+    .content__input--invalid {
+      border-color: $border--red;
+    }
+    option {
+      background: $purple-1;
+      font-size: $body-3;
+    }
+  }
+  .group__errors {
+    font-size: $body-4;
+    color: $tRed;
+  }
+  @include respond(tablet) {
+    width: $w-100;
+  }
+}

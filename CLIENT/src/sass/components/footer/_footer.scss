@@ -1,0 +1,336 @@
+.footer {
+  background: $dark-1;
+  padding: $p-10 * 5 $p-10 * 10;
+  color: $tWhite;
+  .footer__contact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: $m-10 * 5;
+    .contact__inner {
+      width: $w-100 / 2.2;
+      @include respond(tablet) {
+        width: $w-100;
+        margin: $m-10 * 5 0;
+      }
+    }
+    .contact__event {
+      .event__title {
+        font-size: $body-3;
+        font-weight: $medium;
+        .text {
+          margin: 0;
+        }
+      }
+      .event__content {
+        font-size: $body-4;
+        text-align: justify;
+      }
+      .event__form {
+        width: $w-100;
+        display: flex;
+        justify-content: space-between;
+        height: $h-10 * 5;
+        .form__input {
+          width: $w-100 - 42;
+          .input {
+            width: $w-100;
+            padding: $p-10 * 1.5;
+            outline: none;
+            border: 0;
+            border-radius: $radius-5;
+            font-size: $body-4;
+          }
+          .input__errors {
+            color: $tRed;
+            font-size: $body-4;
+          }
+          @include respond(laptop) {
+            width: $w-100;
+            margin-bottom: $m-10;
+          }
+        }
+        .form__button {
+          width: $w-100 - 60;
+          height: $h-100;
+          .button--gradient,
+          .button--disabled {
+            width: $w-100;
+            padding: $p-10 * 1.5;
+            display: flex;
+            outline: none;
+            border-radius: $radius-5;
+            font-size: $body-4;
+            font-weight: $medium;
+            text-align: center;
+          }
+          .button--gradient-disabled {
+            opacity: 0.5;
+            user-select: none;
+            pointer-events: none;
+          }
+          @include respond(laptop) {
+            width: $w-100;
+          }
+        }
+        @include respond(laptop) {
+          flex-direction: column;
+        }
+      }
+    }
+    .contact__facebook {
+      border: 1px solid $border--purple;
+      border-radius: $radius-5;
+      .facebook__info {
+        width: $w-100;
+        height: $h-10 * 15;
+        position: relative;
+        &::after {
+          content: "";
+          width: $w-100;
+          height: $h-100;
+          background: $RGBA-dark-2;
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+        .info__img {
+          width: $w-100;
+          height: $h-100;
+          object-fit: cover;
+          object-position: top;
+        }
+        .info__link {
+          width: $w-100;
+          height: $h-100;
+          padding: $p-10;
+          text-decoration: none;
+          color: $tWhite;
+          display: flex;
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 999;
+          .link__img {
+            width: $w-10 * 5;
+            height: $h-10 * 5;
+            object-fit: cover;
+            border: 2px solid $border--white;
+            margin-right: $m-10;
+          }
+          .link__content {
+            .content__title {
+              font-weight: $medium;
+              margin: 0;
+            }
+            .content__text {
+              font-size: $body-5;
+            }
+          }
+        }
+      }
+      .facebook__video {
+        width: $w-100;
+        height: $h-10 * 20;
+        .video {
+          width: $w-100;
+          height: $h-100;
+        }
+      }
+    }
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
+  .footer__address {
+    .address__city {
+      .city {
+        font-size: $body-1;
+        font-weight: $medium;
+        color: $tGrey;
+      }
+      .city__addr-list {
+        display: flex;
+        flex-wrap: wrap;
+        .addr-list__inner {
+          width: $w-100 / 4;
+          padding-right: $p-10 * 2;
+          margin-bottom: $m-10 * 2;
+          &:nth-child(4) {
+            padding: 0;
+          }
+          .inner__title {
+            font-size: $body-3;
+            font-weight: $medium;
+          }
+          .inner__content {
+            font-size: $body-4;
+            color: $tGrey;
+            p {
+              margin: 0;
+            }
+          }
+          @include respond(extraTablet) {
+            width: $w-100 / 2;
+          }
+          @include respond(phone) {
+            width: $w-100;
+          }
+        }
+      }
+      @include respond(tablet) {
+        flex-direction: column;
+      }
+    }
+    .address__line {
+      display: block;
+      width: $w-100;
+      height: 5px;
+      background: $primary;
+    }
+  }
+  .footer__link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: $body-4;
+    padding-top: $p-10 * 2;
+    .link {
+      display: block;
+      text-decoration: none;
+      color: $tWhite;
+      transition: all 0.3s linear;
+      &:hover {
+        color: $tGrey;
+      }
+    }
+    .link__info {
+      width: $w-100 - 60;
+      .link__web {
+        margin-left: $m-5;
+      }
+      @include respond(laptop) {
+        width: $w-100 - 70;
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        color: $tGrey;
+        margin-bottom: $m-10;
+      }
+    }
+    .link__list {
+      width: $w-100 - 60;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      .link__title {
+        display: block;
+        margin-bottom: $m-5;
+        width: $w-100 / 3.5;
+        @include respond(tablet) {
+          width: $w-100 / 3.2;
+        }
+      }
+      @include respond(laptop) {
+        width: $w-100 - 50;
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        margin-bottom: $m-10;
+      }
+    }
+    .link__social {
+      width: $w-100 - 85;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      p {
+        margin: 0;
+        color: $tGrey;
+        @include respond(tablet) {
+          margin-right: $m-10;
+        }
+      }
+      .social__icon {
+        display: flex;
+        .icon {
+          display: inline-block;
+          width: $w-10 * 3;
+          height: $h-10 * 3;
+          text-align: center;
+          line-height: $h-10 * 3;
+          border-radius: $radius-5;
+          background: $blue;
+          margin: $m-5;
+          transition: all 0.3s linear;
+          &:nth-child(2) {
+            background: $red;
+          }
+          &:hover {
+            background: $dark-3;
+            color: $tWhite;
+          }
+        }
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        margin-bottom: $m-10;
+        justify-content: flex-start;
+      }
+    }
+    @include respond(tablet) {
+      flex-direction: column-reverse;
+    }
+  }
+  .footer__alert {
+    width: $w-100;
+    height: $h-100;
+    background: $RGBA-dark-2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    .alert__wrapper {
+      width: $w-100 - 60;
+      padding: $p-10 * 2;
+      background: $purple-1;
+      border-radius: $radius-5;
+      text-align: center;
+      opacity: 0;
+      transform: translateX(40%);
+      transition: all 0.5s ease;
+      @include respond(laptop) {
+        width: $w-100 - 30;
+      }
+      @include respond(extraTablet) {
+        width: $w-100 - 20;
+      }
+      @include respond(phone) {
+        width: $w-100 - 10;
+      }
+    }
+    .alert__wrapper--active {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  .footer__alert--active {
+    opacity: 1;
+    visibility: visible;
+  }
+  @include respond(laptop) {
+    padding: $p-10 * 5 $p-10 * 2;
+  }
+  @include respond(tablet) {
+    padding: $p-10 * 3;
+  }
+  @include respond(phone) {
+    padding: $p-10 * 3 $p-10 * 1.5;
+  }
+}

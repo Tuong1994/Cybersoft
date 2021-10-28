@@ -1,0 +1,72 @@
+.student-seven {
+  padding: $p-10 * 5 $p-10 * 10;
+  .student-seven__wrapper {
+    font-size: $body-3;
+    text-align: justify;
+    .wrapper__content {
+      display: flex;
+      margin-bottom: $m-10 * 5;
+      height: $h-10 * 35;
+      .content__img {
+        width: $w-100 - 70;
+        height: $h-100;
+        padding: 0 $p-10;
+        .img {
+          width: $w-100;
+          height: $h-100;
+          object-fit: cover;
+          object-position: center;
+        }
+        @include respond(extraTablet) {
+          margin-bottom: $m-10 * 2;
+          width: $w-100;
+          height: $h-10 * 40;
+        }
+      }
+      .content {
+        width: $w-100 - 25;
+        h4 {
+          text-align: center;
+          @include respond(extraTablet) {
+            font-size: $subtitle-2;
+          }
+        }
+        @include respond(extraTablet) {
+          width: $w-100;
+        }
+      }
+      @include respond(laptop) {
+        margin-bottom: $m-10 * 10;
+      }
+      @include respond(extraTablet) {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: $m-10;
+      }
+    }
+    .wrapper {
+      margin: $m-10 * 3 0;
+      @include respond(extraTablet) {
+        margin: $m-10 * 2 0;
+      }
+    }
+  }
+  .student-seven__img {
+    width: $w-100;
+    display: flex;
+    justify-content: center;
+    .img {
+      width: $w-100 - 50;
+      @include respond(extraTablet) {
+        width: $w-100;
+      }
+    }
+  }
+  @include respond(laptop) {
+    padding: $p-10 * 5 $p-10;
+  }
+  @include respond(extraTablet) {
+    margin-top: $m-10 * 7;
+    padding: $p-10 * 5 $p-10;
+  }
+}

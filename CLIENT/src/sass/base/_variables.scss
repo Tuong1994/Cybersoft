@@ -1,0 +1,108 @@
+// BACKGROUND COLOR
+$primary: #fff;
+$white: #f4f4f4;
+$dark-1: #1e1e2a;
+$dark-2: #272634;
+$dark-3: #000;
+$purple-1: #7462f9;
+$purple-2: #505170;
+$purple-3: #2f256b;
+$grey: #999;
+$light-grey: #ddd;
+$red: #dd3333;
+$light-red: #fa6c76;
+$blue: #2196f3;
+$deepBlue: #19204D;
+$light-blue: #d6edf6;
+$RGBA-dark-1: rgba(0, 0, 0, 0.9);
+$RGBA-dark-2: rgba(0, 0, 0, 0.5);
+$RGBA-black-1: rgba(0, 0, 0, 0.4);
+$RGBA-black-2: rgba(0, 0, 0, 0.5);
+$RGBA-black-3: rgba(0, 0, 0, 0.6);
+$RGBA-black-4: rgba(0, 0, 0, 0.7);
+$RGBA-black-5: rgba(0, 0, 0, 0.8);
+$RGBA-white-1: rgba(225, 225, 225, 0.9);
+$RGBA-white-2: rgba(225, 225, 225, 0.3);
+
+// BACKGROUND COLOR GRADIENT
+$gradient-purple-left: linear-gradient(to left, #227df9, #7462f9, #df3ef8);
+$gradient-purple-right: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+$gradient-purple-top: linear-gradient(to top, #227df9, #7462f9, #df3ef8);
+$gradient-deepPink: linear-gradient(to top, #922662 20%, transparent);
+$gradient-deepBlue: linear-gradient(to top, #2e2888 20%, transparent);
+$gradient-blue: linear-gradient(209.21deg, rgb(65, 47, 175) 13.57%, rgb(81, 198, 234) 98.38%);
+$gradient-lightBlue: linear-gradient(209.21deg, rgb(200, 255, 222) 13.57%, rgb(53, 142, 239) 98.38%);
+$gradient-lightPurple: linear-gradient(209.21deg, rgb(159, 127, 229) 13.57%, rgb(78, 153, 227) 98.38%);
+$gradient-orange: linear-gradient(209.21deg, rgb(255, 180, 111) 13.57%, rgb(230, 97, 55) 98.38%);
+
+
+// BACKGROUND BUTTON
+$button--red: #dd3333;
+$button--blue: #2196f3;
+$button--gradient: linear-gradient(to right, #227df9, #7462f9, #df3ef8);
+
+// BORDER-COLOR
+$border--white: #fff;
+$border--red: #dd3333;
+$border--grey: rgba(153, 153, 153, 0.5);
+$border--dark-1: rgba(64, 64, 64, 0.5);
+$border--dark-2: #1f2022;
+$border--purple: #7462f9;
+$border-table: #7462f9;
+$border-input: #f19326;
+
+// BORDER RADIUS
+$radius-5: 5px;
+$radius-25: 25px;
+$radius-50: 50px;
+$radius-round: 50%;
+
+// TEXT COLOR
+$tPrimary: #000;
+$tWhite: #fff;
+$tDark-1: #333;
+$tDark-2: #727272;
+$tRed: #dd3333;
+$tBlue: #0099ff;
+$tYellow: #fff723;
+$tPurple: #7462f9;
+$tGrey: #999;
+
+// WIDTH
+$w-5: 5px;
+$w-10: 10px;
+$w-100: 100%;
+
+// HEIGHT
+$h-5: 5px;
+$h-10: 10px;
+$h-100: 100%;
+
+// MARGIN
+$m-5: 5px;
+$m-10: 10px;
+
+// PADDING
+$p-5: 5px;
+$p-10: 10px;
+
+// FONT SIZE
+$h1: 70px;
+$h2: 60px;
+$h3: 55px;
+$h4: 42px;
+$h5: 35px;
+$h6: 30px;
+$subtitle-1: 24px;
+$subtitle-2: 22px;
+$body-1: 18px;
+$body-2: 17px;
+$body-3: 15px;
+$body-4: 13px;
+$body-5: 12px;
+$body-6: 11px;
+
+// FONT WEIGHT
+$light: 400;
+$medium: 600;
+$bold: 800;

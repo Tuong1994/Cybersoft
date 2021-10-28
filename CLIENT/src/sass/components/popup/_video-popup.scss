@@ -1,0 +1,52 @@
+.video-popup {
+  width: $w-100;
+  height: $h-100;
+  background: $RGBA-dark-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  .video-popup__inner {
+    width: $w-100 - 50;
+    height: $h-10 * 40;
+    .inner__button {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      .button--close {
+        font-size: $h6;
+      }
+    }
+    .inner__content {
+      width: $w-100;
+      height: $h-100;
+      border: 0;
+      border-radius: $radius-5;
+    }
+    @include respond(tablet) {
+      width: $w-100 - 25;
+      height: $h-10 * 30;
+    }
+    @include respond(phone) {
+      width: $w-100 - 10;
+      height: $h-10 * 28;
+    }
+  }
+  @include respond(phone) {
+    align-items: center;
+  }
+  @include respond(smallPhone) {
+    align-items: center;
+  }
+}
+.video-popup--active {
+  opacity: 1;
+  visibility: visible;
+}

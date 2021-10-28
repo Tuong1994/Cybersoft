@@ -1,0 +1,106 @@
+.stories {
+  padding: $p-10 * 5 $p-10 * 10;
+  .stories__title {
+    margin-bottom: $m-10 * 5;
+    .title {
+      font-size: $h4;
+      @include respond(phone) {
+        font-size: $h6;
+      }
+    }
+    .text {
+      font-size: $subtitle-2;
+      @include respond(phone) {
+        font-size: $body-1;
+      }
+    }
+  }
+  .stories__images {
+    width: $w-100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .images__wrapper {
+      width: $w-100 / 3.3;
+      height: $h-10 * 45;
+      margin: $m-10 * 1.5;
+      cursor: pointer;
+      position: relative;
+      .wrapper__img {
+        width: $w-100;
+        height: $h-100;
+        object-fit: cover;
+      }
+      .wrapper__info {
+        width: $w-100;
+        height: $h-100;
+        background: $RGBA-dark-2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s linear;
+        .info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .info__name {
+            font-weight: $medium;
+            color: $tWhite;
+          }
+          .info__link {
+            width: $w-10 * 8;
+            height: $h-10 * 8;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: $h-10 * 8;
+            border: 2px solid $border--white;
+            border-radius: $radius-round;
+            color: $tWhite;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(50%);
+            transition: all 0.5s linear;
+          }
+        }
+      }
+      &:hover .wrapper__info {
+        opacity: 1;
+        visibility: visible;
+      }
+      &:hover .wrapper__info .info .info__link {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+      @include respond(extraTablet) {
+        width: $w-100 / 2.2;
+        margin: $m-10;
+      }
+      @include respond(tablet) {
+        width: $w-100 / 2.2;
+        margin: $m-10;
+      }
+      @include respond(phone) {
+        width: $w-100;
+        height: $h-10 * 35;
+      }
+    }
+    @include respond(extraTablet) {
+      justify-content: center;
+    }
+  }
+  @include respond(laptop) {
+    margin-top: $m-10 * 7;
+    padding: $p-10;
+  }
+  @include respond(extraTablet) {
+    margin-top: $m-10 * 7;
+    padding: $p-10;
+  }
+}

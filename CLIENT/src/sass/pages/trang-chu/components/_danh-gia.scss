@@ -1,0 +1,134 @@
+.review {
+  padding: $p-10 * 5 0;
+  .review__title {
+    font-size: $h5;
+    font-weight: $medium;
+    text-align: center;
+    padding: 0 $p-10 * 10;
+    margin-bottom: $m-10 * 5;
+    @include respond(laptop) {
+      padding: 0 $p-10 * 5;
+    }
+    @include respond(tablet) {
+      font-size: $subtitle-2;
+      padding: 0 $p-10;
+    }
+  }
+  .review__video {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: $m-10 * 5;
+    padding: 0 $p-10 * 10;
+    .video__one,
+    .video__two {
+      width: $w-100 - 55;
+      height: $h-10 * 30;
+      position: relative;
+      &::after {
+        content: "";
+        width: $w-100;
+        height: $h-100;
+        background: $RGBA-dark-2;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .img {
+        width: $w-100;
+        height: $h-100;
+        object-fit: cover;
+        object-position: center;
+      }
+      .play-button {
+        display: block;
+        cursor: pointer;
+        width: $w-10 * 7;
+        height: $h-10 * 7;
+        text-align: center;
+        line-height: $h-10 * 7;
+        border: 2px solid $border--white;
+        border-radius: $radius-round;
+        background-image: $gradient-purple-right;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s linear;
+        z-index: 999;
+        &:hover {
+          width: $w-10 * 8;
+          height: $h-10 * 8;
+          line-height: $h-10 * 8;
+        }
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        margin-bottom: $m-10;
+      }
+    }
+    @include respond(laptop) {
+      padding: 0 $p-10 * 5;
+    }
+    @include respond(tablet) {
+      flex-direction: column;
+      padding: 0 $p-10;
+    }
+  }
+  .review__images {
+    padding: 0 $p-10 * 10;
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .images__wrapper {
+        width: $w-100 / 3.5;
+        margin-bottom: $m-10 * 2;
+        transition: all 0.1s linear;
+        cursor: pointer;
+        .img {
+          width: $w-100;
+        }
+        &:hover {
+          border: 5px solid transparent;
+          border-image: $gradient-purple-right;
+          border-image-slice: 1;
+        }
+        @include respond(tablet) {
+          width: $w-100 / 2;
+        }
+        @include respond(smallPhone) {
+          width: $w-100;
+        }
+      }
+    }
+    @include respond(laptop) {
+      padding: 0 $p-10 * 5;
+    }
+    @include respond(tablet) {
+      padding: 0 $p-10;
+    }
+  }
+  .review__button {
+    padding: $p-10 * 5;
+    background-color: $RGBA-white-1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .button--gradient {
+      padding: $p-10 $p-10 * 5;
+      text-decoration: none;
+      color: $tWhite;
+      font-size: $body-3;
+      font-weight: $medium;
+      @include respond(phone) {
+        font-size: $body-4;
+        padding: $p-10 $p-10 * 2;
+      }
+    }
+  }
+}

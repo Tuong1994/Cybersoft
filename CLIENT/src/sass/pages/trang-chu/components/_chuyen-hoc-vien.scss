@@ -1,0 +1,134 @@
+.student-stories {
+  padding: $p-10 * 5;
+  .student-stories__title {
+    font-size: $h4;
+    text-align: center;
+    margin-bottom: $m-10 * 5;
+    @include respond(extraTablet) {
+        font-size: $h5;
+    }
+    @include respond(phone) {
+        font-size: $h6;
+        margin-bottom: $m-10 * 35;
+    }
+    @include respond(smallPhone) {
+        font-size: $h6;
+        margin-bottom: $m-10 * 33;
+    }
+  }
+  .student-stories__images {
+    width: $w-100;
+    height: $h-10 * 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: $m-10 * 5;
+    .images__wrapper {
+      width: $w-100 / 3.5;
+      height: $h-100;
+      margin: 0 $m-5;
+      cursor: pointer;
+      position: relative;
+      .wrapper__img {
+          width: $w-100;
+          height: $h-100;
+          object-fit: cover;
+      }
+      .wrapper__info {
+        width: $w-100;
+        height: $h-100;
+        background: $RGBA-dark-2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s linear;
+        .info {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .info__name {
+            font-weight: $medium;
+            color: $tWhite;
+          }
+          .info__link {
+            width: $w-10 * 8;
+            height: $h-10 * 8;
+            cursor: pointer;
+            text-decoration: none;
+            text-align: center;
+            line-height: $h-10 * 8;
+            border: 2px solid $border--white;
+            border-radius: $radius-round;
+            color: $tWhite;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(50%);
+            transition: all 0.5s linear;
+          }
+        }
+      }
+      &:hover .wrapper__info {
+        opacity: 1;
+        visibility: visible;
+      }
+      &:hover .wrapper__info .info .info__link {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0);
+      }
+      @include respond(extraTablet) {
+        width: $w-100 / 3;
+      }
+      @include respond(phone) {
+        width: $w-100;
+        margin-bottom: $m-10;
+      }
+    }
+    @include respond(extraTablet) {
+      height: $h-10 * 35;
+    }
+    @include respond(phone) {
+      flex-direction: column;
+      height: $h-10 * 30;
+      margin-bottom: $m-10 * 35;
+    }
+    @include respond(smallPhone) {
+      flex-direction: column;
+      height: $h-10 * 30;
+      margin-bottom: $m-10 * 33;
+    }
+  }
+  .student-stories__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .button--gradient {
+      width: $w-100 / 3.5;
+      padding: $p-10 $p-10 * 5;
+      text-decoration: none;
+      color: $tWhite;
+      font-size: $body-3;
+      font-weight: $medium;
+      @include respond(laptop) {
+          width: $w-100 / 2.5;
+          font-size: $body-5;
+      }
+      @include respond(extraTablet) {
+          width: $w-100 / 2;
+          font-size: $body-5;
+      }
+      @include respond(phone) {
+          width: $w-100;
+          font-size: $body-4;
+      }
+    }
+  }
+  @include respond(laptop) {
+    padding: $p-10;
+  }
+}

@@ -1,0 +1,218 @@
+.advisory {
+  padding: $p-10 * 5 $p-10 * 10;
+  .advisory__banner {
+    display: flex;
+    align-items: center;
+    margin-bottom: $m-10 * 3;
+    .banner__img {
+      width: $w-100 - 50;
+      @include respond(tablet) {
+        width: $w-100;
+        margin-bottom: $m-10 * 2;
+      }
+    }
+    .banner__content {
+      h2 {
+        margin-bottom: $m-10 * 2;
+      }
+    }
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
+  .advisory__form {
+    display: flex;
+    margin-bottom: $m-10 * 3;
+    .form__info {
+      width: $w-100 - 65;
+      .info__title {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $m-10 * 5;
+        .title {
+          font-weight: $medium;
+          @include respond(tablet) {
+            font-size: $subtitle-1;
+          }
+        }
+        .title__line {
+          display: block;
+          width: $w-10 * 5;
+          height: 3px;
+          background: $grey;
+        }
+      }
+      .info__content {
+        font-weight: $medium;
+        p {
+          color: $tRed;
+        }
+        .content__list {
+          @include respond(tablet) {
+            padding-left: $p-10 * 2;
+          }
+        }
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        margin-bottom: $m-10 * 2;
+      }
+    }
+    .form__wrapper {
+      width: $w-100 - 35;
+      padding: 0 $p-10 * 3;
+      .form__title {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: $m-10 * 5;
+        .title {
+          font-weight: $medium;
+          @include respond(tablet) {
+            font-size: $subtitle-1;
+          }
+        }
+        .title__line {
+          display: block;
+          width: $w-10 * 5;
+          height: 3px;
+          background: $grey;
+        }
+      }
+      .form {
+        .form__group {
+          margin-bottom: $m-10 * 2;
+          .group__content {
+            width: $w-100;
+            font-size: $body-3;
+            font-family: Arial, Helvetica, sans-serif;
+            position: relative;
+            .group__icon {
+              position: absolute;
+              top: 22%;
+              left: 3%;
+              .fa-envelope {
+                background-image: $gradient-purple-right;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-text-fill-color: transparent;
+              }
+            }
+            .group__input {
+              width: $w-100;
+              outline: none;
+              border: 2px solid $border--grey;
+              padding: $p-10 $p-10 * 4;
+              transition: all 0.3s linear;
+            }
+            .group__input:focus {
+              border-color: $border--dark-2;
+            }
+            .textarea {
+              padding: $p-5;
+            }
+            &:hover .group__input {
+              border-color: $border--dark-1;
+            }
+          }
+          .group__error {
+            font-size: $body-4;
+            color: $tRed;
+            margin: $m-10 0;
+          }
+        }
+        .form__button {
+          .button--red {
+            outline: none;
+            .fa {
+              margin-right: $m-10;
+              animation: rotate 2s linear infinite;
+            }
+          }
+          .button--red-disabled {
+            outline: none;
+            background: $grey;
+          }
+          .button--red-loading {
+            opacity: 0.5;
+            user-select: none;
+            pointer-events: none;
+          }
+        }
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        padding: 0 $p-10;
+        margin-bottom: $m-10 * 2;
+      }
+    }
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
+  .advisory__banks {
+    h1 {
+      text-align: center;
+    }
+    .banks__list {
+      margin-bottom: $m-10 * 3;
+      .list__wrapper {
+        display: flex;
+        justify-content: space-between;
+        .wrapper__card {
+          width: $w-100 / 3.1;
+          padding: $p-10;
+          border: 1px solid $border--dark-1;
+          border-radius: $radius-5;
+          transition: all 0.5s ease;
+          &:hover {
+            border-color: $border--purple;
+            color: $tPurple;
+          }
+          .card__img {
+            width: $w-100;
+            height: $h-10 * 8;
+            margin-bottom: $m-10 * 2;
+            padding-bottom: $p-10 * 2;
+            border-bottom: 1px solid $border--dark-1;
+            display: flex;
+            justify-content: center;
+            .img {
+              width: $w-100 - 50;
+              object-fit: contain;
+            }
+          }
+          .card__content {
+            font-weight: $medium;
+            p {
+              margin-bottom: 0;
+            }
+          }
+          @include respond(tablet) {
+            width: $w-100;
+            margin-bottom: $m-10 * 2;
+          }
+        }
+        @include respond(tablet) {
+          flex-direction: column;
+        }
+      }
+    }
+    .banks__map {
+      width: $w-100;
+      height: $h-10 * 50;
+      .map {
+        width: $w-100;
+        height: $h-100;
+        border: 0;
+      }
+    }
+  }
+  @include respond(extraTablet) {
+    padding: $p-10 * 7 $p-10 * 5;
+  }
+  @include respond(phone) {
+    padding: $p-10 * 7 $p-10;
+  }
+}

@@ -1,0 +1,158 @@
+.course-upload {
+  width: $w-100;
+  height: $h-100;
+  background: $RGBA-dark-2;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  .course-upload__wrapper {
+    width: $w-100 - 65;
+    padding: $p-10 * 2;
+    border-radius: $radius-5;
+    background: $purple-1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transform: translateX(-40%);
+    transition: all 0.5s ease;
+    .wrapper__title {
+      color: $tWhite;
+      margin-bottom: $m-10;
+    }
+    .wrapper__preview {
+      width: $w-100;
+      height: $h-10 * 15;
+      margin-bottom: $m-10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      .preview__loading {
+        width: $w-10 * 15;
+        height: $h-100;
+        background: $RGBA-dark-2;
+        color: $tWhite;
+        font-size: $h6;
+        border-radius: $radius-5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        opacity: 0;
+        transition: all 0.5s ease;
+        .fa {
+          animation: rotate 2s linear infinite;
+        }
+      }
+      .preview__loading--active {
+        opacity: 1;
+      }
+      .preview__image {
+        width: $w-10 * 15;
+        height: $h-10 * 15;
+        border-radius: $radius-5;
+        object-fit: cover;
+      }
+    }
+    .wrapper__form {
+      width: $w-100;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .form__group {
+        width: $w-100 - 60;
+        margin-bottom: $m-10 * 2;
+        .group__name {
+          width: $w-100;
+          height: $h-10 * 5;
+          margin: 0 auto;
+          padding: $p-10;
+          border: 1px solid $border--white;
+          border-radius: $radius-5;
+          color: $tWhite;
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          &:hover .fa {
+            top: -100%;
+            opacity: 0;
+          }
+          &:hover span {
+            opacity: 1;
+            left: 50%;
+          }
+          .fa,
+          span {
+            width: $w-100;
+            font-size: $body-1;
+            text-align: center;
+            display: block;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s ease;
+          }
+          span {
+            font-size: $body-4;
+            opacity: 0;
+            left: 100%;
+          }
+        }
+        .group__input {
+          display: none;
+        }
+        @include respond(smallPhone) {
+          width: $w-100 - 20;
+        }
+      }
+      .form__button {
+        width: $w-100;
+        display: flex;
+        justify-content: center;
+        .button--gradient,
+        .button--disabled {
+          display: flex;
+          outline: none;
+          margin: 0 $m-10 * 2;
+        }
+        .button--gradient-disabled {
+          opacity: 0.5;
+          user-select: none;
+          pointer-events: none;
+        }
+      }
+    }
+    @include respond(laptop) {
+      width: $w-100 - 30;
+    }
+    @include respond(phone) {
+      width: $w-100 - 10;
+    }
+  }
+  .course-upload__wrapper--active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.course-upload--active {
+  opacity: 1;
+  visibility: visible;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

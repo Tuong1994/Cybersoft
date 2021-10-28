@@ -1,0 +1,122 @@
+.image-popup {
+  width: $w-100;
+  height: $h-100;
+  background: $RGBA-dark-2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999999;
+  .image-popup__inner {
+    width: $w-100 - 30;
+    height: $h-10 * 55;
+    .inner__button {
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      .button--close {
+        font-size: $h6;
+      }
+    }
+    .inner__slider {
+      width: $w-100;
+      height: $h-100;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      .slider__prev,
+      .slider__next {
+        font-size: $h4;
+        color: $tWhite;
+        cursor: pointer;
+        @include respond(extraTablet) {
+          margin: 0 $m-10 * 2;
+        }
+        @include respond(phone) {
+          display: none;
+        }
+      }
+      .slider__button--disabled {
+        opacity: 0.5;
+        user-select: none;
+        pointer-events: none;
+      }
+      .slider__main {
+        width: $w-100;
+        height: $h-100;
+        display: flex;
+        justify-content: center;
+        .main__image {
+          width: $w-100 - 40;
+          height: $h-100;
+          position: relative;
+          overflow-y: auto;
+          img {
+            width: $w-100;
+            height: $h-100;
+            object-fit: cover;
+            object-position: center;
+          }
+          .image__prev,
+          .image__next {
+            font-size: $h4;
+            color: $tWhite;
+            background: $purple-1;
+            cursor: pointer;
+            position: fixed;
+            top: 50%;
+            z-index: 999;
+            transform: translateY(-50%);
+            opacity: 0;
+            visibility: visible;
+            user-select: none;
+            pointer-events: none;
+            @include respond(phone) {
+              opacity: 1;
+              visibility: visible;
+              user-select: unset;
+              pointer-events: unset;
+            }
+          }
+          .image__next {
+            @include respond(phone) {
+              right: 7%;
+            }
+            @include respond(smallPhone) {
+              right: 10%;
+            }
+          }
+          .image__button--disabled {
+            display: none;
+          }
+          @include respond(tablet) {
+            width: $w-100;
+          }
+        }
+      }
+    }
+    @include respond(laptop) {
+      width: $w-100 - 10;
+      height: $h-10 * 40;
+    }
+    @include respond(extraTablet) {
+      width: $w-100 - 15;
+      height: $h-10 * 40;
+    }
+    @include respond(phone) {
+      width: $w-100 - 15;
+      height: $h-10 * 30;
+    }
+    @include respond(smallPhone) {
+      width: $w-100 - 20;
+      height: $h-10 * 35;
+    }
+    @include respond(extraSmallPhone) {
+      width: $w-100 - 20;
+      height: $h-10 * 30;
+    }
+  }
+}

@@ -1,0 +1,110 @@
+.button--gradient {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: inline-block;
+  color: $tWhite;
+  padding: $p-10 - 5 $p-10 * 2;
+  border: 0;
+  outline: none;
+  overflow: hidden;
+  position: relative;
+  z-index: 999;
+  &::after {
+    content: "";
+    width: $w-100 * 5;
+    height: $h-100 * 2;
+    background: $gradient-purple-right;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(-50%);
+    transition: all 0.25s linear;
+    z-index: -1;
+  }
+  &:hover::after {
+    transform: translateX(-70%);
+  }
+}
+
+.button--border-white {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: inline-block;
+  padding: $p-5 $p-10 * 2;
+  border: 2px solid $border--white;
+  outline: none;
+  background: transparent;
+  position: relative;
+  z-index: 999;
+  &::after {
+    content: "";
+    width: 0;
+    height: $h-100;
+    background: $gradient-purple-right;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.25s linear;
+    z-index: -1;
+  }
+  &:hover::after {
+    width: $w-100;
+  }
+}
+
+.button--border-gradient {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: inline-block;
+  padding: $p-5 $p-10 * 2;
+  outline: none;
+  border: 2px solid transparent;
+  border-image: $gradient-purple-right;
+  border-image-slice: 1;
+  background: transparent;
+  position: relative;
+  z-index: 999;
+  &::after {
+    content: "";
+    width: 0;
+    height: $h-100;
+    background: $gradient-purple-right;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.25s linear;
+    z-index: -1;
+  }
+  &:hover::after {
+    width: $w-100;
+  }
+}
+
+.button--red,
+.button--red-disabled {
+  text-align: center;
+  font-weight: $medium;
+  padding: $p-10 $p-10 * 2;
+  background: $red;
+  color: $tWhite;
+  border: 0;
+}
+
+.button--close {
+  font-size: $subtitle-1;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  color: $tWhite;
+}
+
+.button--disabled {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  display: inline-block;
+  color: $tWhite;
+  padding: $p-10 - 4 $p-10 * 2;
+  border: 0;
+  outline: none;
+  background: $grey;
+}

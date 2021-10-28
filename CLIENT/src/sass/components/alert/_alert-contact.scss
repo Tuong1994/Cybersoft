@@ -1,0 +1,106 @@
+.alert-contact {
+    width: $w-100;
+    height: $h-100;
+    background: $RGBA-dark-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    .alert-contact__wrapper {
+        width: $w-100 - 50;
+        height: $h-10 * 40;
+        padding: $p-10 * 2;
+        color: $tWhite;
+        overflow: auto;
+        background: $purple-1;
+        opacity: 0;
+        transform: translateX(40%);
+        transition: all 0.5s ease;
+        .wrapper__logo {
+            text-align: center;
+            font-size: $subtitle-1;
+            margin-bottom: $m-10 * 2;
+        }
+        .wrapper__note {
+            @include respond(phone) {
+                padding: $p-10 * 2;
+            }
+        }
+        .wrapper__line {
+            width: $w-100;
+            height: 3px;
+            background: $primary;
+            display: block;
+            margin: $m-10 * 2 0;
+        }
+        .wrapper__info {
+            margin-bottom: $m-10 * 2;
+            .info__title {
+                font-size: $body-1;
+            }
+            .info__group {
+                display: flex;
+                align-items: center;
+                .group__name {
+                    width: $w-100 - 70;
+                    display: flex;
+                    align-items: center;
+                    .fa {
+                        margin-right: $m-10;
+                    }
+                    span {
+                        @include respond(phone) {
+                            display: none;
+                        }
+                    }
+                    @include respond(phone) {
+                        width: $w-100 - 80;
+                        justify-content: center;
+                    }
+                }
+                .group__text {
+                    width: $w-100 - 20;
+                    margin: $m-10 0;
+                    display: block;
+                }
+                @include respond(phone) {
+                    font-size: $body-4;
+                }
+            }
+        }
+        .wrapper__button {
+            width: $w-100;
+            display: flex;
+            justify-content: center;
+        }
+        @include respond(laptop) {
+            width: $w-100 - 30;
+            padding: $p-10 * 2;
+        }
+        @include respond(tablet) {
+            width: $w-100 - 10;
+            height: $h-10 * 35;
+            padding: $p-10;
+        }
+        @include respond(phone) {
+            width: $w-100 - 10;
+            height: $h-10 * 30;
+            padding: $p-10;
+        }
+    }
+    .alert-contact__wrapper--active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+.alert-contact--active {
+    opacity: 1;
+    visibility: visible;
+}

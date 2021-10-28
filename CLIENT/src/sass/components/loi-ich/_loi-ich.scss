@@ -1,0 +1,131 @@
+.benefit {
+  width: $w-100;
+  background-image: url("../../../assets/imgs/city.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  padding: $p-10 * 10 $p-10 * 5;
+  position: relative;
+  &::after {
+    content: "";
+    width: $w-100;
+    height: $h-100;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: $RGBA-white-1;
+  }
+  .benefit__wrapper {
+    position: relative;
+    z-index: 999;
+    .wrapper__title {
+      text-align: right;
+      margin-bottom: $m-10 * 2;
+      .title__gradient {
+        font-size: $h2;
+        font-weight: $medium;
+        color: $tWhite;
+        background: $gradient-purple-left;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        @include respond(tablet) {
+          font-size: $h4;
+        }
+      }
+      .title__text {
+        font-size: $body-1;
+      }
+    }
+    .wrapper__content {
+      width: $w-100;
+      user-select: none;
+      .content__detail {
+        width: $w-100;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        .detail__inner {
+          width: $w-100 / 3.5;
+          margin-bottom: $m-10;
+          display: flex;
+          .inner__icon {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            .fa {
+              border: 2px solid $border--purple;
+              border-radius: $radius-round;
+              width: $w-10 * 8;
+              height: $h-10 * 8;
+              font-size: $h4;
+              text-align: center;
+              line-height: $h-10 * 8;
+              color: $tDark-1;
+              background-image: $gradient-purple-top;
+              background-clip: text;
+              -webkit-background-clip: text;
+              -moz-background-clip: text;
+              -webkit-text-fill-color: transparent;
+              -moz-text-fill-color: transparent;
+              transition: all 0.3s linear;
+            }
+            .icon__line {
+              width: 1px;
+              height: $h-100;
+              background: $border--grey;
+              @include respond(extraTablet) {
+                display: none;
+              }
+            }
+          }
+          .info__text {
+            font-size: $body-3;
+            padding-left: $p-10 * 4;
+            .text__title {
+              font-size: $body-1;
+              font-weight: $medium;
+            }
+            .text {
+              text-align: justify;
+              @include respond(extraTablet) {
+                text-align: center;
+              }
+            }
+            @include respond(laptop) {
+              padding-left: $p-10 * 2;
+            }
+            @include respond(extraTablet) {
+              text-align: center;
+              padding: $p-5;
+            }
+          }
+          &:hover .inner__icon .fa {
+            background: $purple-1;
+            color: $tWhite;
+            -webkit-text-fill-color: $tWhite;
+            -moz-text-fill-color: $tWhite;
+          }
+          @include respond(laptop) {
+            width: $w-100 / 2.5;
+          }
+          @include respond(extraTablet) {
+            flex-direction: column;
+            width: $w-100;
+          }
+        }
+        @include respond(extraTablet) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  @include respond(laptop) {
+    padding: $p-10 * 2;
+  }
+  @include respond(extraTablet) {
+    padding: $p-10 * 2 $p-10;
+  }
+}

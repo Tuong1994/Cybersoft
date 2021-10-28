@@ -1,0 +1,109 @@
+.introduce__prologue {
+  padding: $p-10 * 5 $p-10 * 20;
+  background: $dark-1;
+  color: $tWhite;
+  overflow: hidden;
+  .prologue__wrapper {
+    display: flex;
+    justify-content: space-around;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(20%);
+    transition: all 1s linear;
+    .prologue__content {
+      width: $w-100 - 50;
+      .content__info {
+        text-align: justify;
+      }
+      .content__button {
+        display: flex;
+        justify-content: space-around;
+        .button--gradient {
+          font-size: $body-5;
+          font-weight: $medium;
+          color: $tPrimary;
+          text-decoration: none;
+          padding: $p-10 $p-10 * 2;
+          @include respond(tablet) {
+            margin-bottom: $m-10 * 2;
+          }
+        }
+        @include respond(phone) {
+          flex-direction: column;
+        }
+      }
+      @include respond(tablet) {
+        width: $w-100;
+      }
+    }
+    .prologue__img {
+      width: $w-100 - 55;
+      height: $h-10 * 25;
+      position: relative;
+      &::after {
+        content: "";
+        width: $w-100;
+        height: $h-100;
+        background: $RGBA-dark-2;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      .img__class {
+        width: $w-100;
+        height: $h-100;
+        object-fit: cover;
+        object-position: center;
+      }
+      .img__play-button {
+        display: block;
+        cursor: pointer;
+        width: $w-10 * 7;
+        height: $h-10 * 7;
+        text-align: center;
+        line-height: $h-10 * 7;
+        border: 2px solid $border--white;
+        border-radius: $radius-round;
+        background-image: $gradient-purple-right;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s linear;
+        z-index: 999;
+        &:hover {
+          width: $w-10 * 8;
+          height: $h-10 * 8;
+          line-height: $h-10 * 8;
+        }
+      }
+      @include respond(tablet) {
+        width: $w-100;
+      }
+    }
+    @include respond(laptop) {
+      padding: $p-10 * 5;
+    }
+    @include respond(tablet) {
+      margin-top: $m-10 * 5;
+      flex-direction: column;
+      padding: $p-10;
+    }
+  }
+  .prologue__wrapper--translateX {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+  @include respond(laptop) {
+    padding: $p-10 * 5;
+  }
+  @include respond(tablet) {
+    padding: $p-10 * 5 $p-10;
+  }
+}

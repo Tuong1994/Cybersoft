@@ -1,0 +1,111 @@
+.user-template {
+  display: flex;
+  .user-template__sidebar {
+    width: $w-100 - 80;
+    height: 100vh;
+    padding: $p-10 * 2 0;
+    background: $purple-1;
+    position: sticky;
+    top: 50px;
+    .sidebar__user {
+      margin-bottom: $m-10;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-weight: $medium;
+      .user__avatar {
+        width: $w-10 * 15;
+        height: $h-10 * 15;
+        border-radius: $radius-round;
+        margin-bottom: $m-10 * 2;
+        overflow: hidden;
+        position: relative;
+        &:hover .avatar__upload {
+          opacity: 1;
+        }
+        .avatar__img {
+          width: $w-100;
+          height: $h-100;
+          object-fit: cover;
+          object-position: center;
+        }
+        .avatar__upload {
+          width: $w-100;
+          height: $h-100;
+          background: $RGBA-dark-2;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          position: absolute;
+          top: 0;
+          opacity: 0;
+          transition: all 0.5s ease;
+          .fa,
+          .upload__text {
+            font-size: $body-4;
+            color: $tWhite;
+          }
+          .fa {
+            font-size: $h6;
+          }
+        }
+      }
+      .user__name {
+        color: $tWhite;
+        text-align: center;
+        .name {
+          font-size: $body-2;
+        }
+        .button--gradient {
+          font-size: $body-4;
+          border-radius: $radius-50;
+          text-decoration: none;
+          color: $tWhite;
+        }
+      }
+    }
+    .sidebar__line {
+      display: block;
+      width: $w-100;
+      height: 3px;
+      background: $primary;
+      margin: $m-10 * 3 auto;
+    }
+    .sidebar__link {
+      text-align: center;
+      padding-left: $p-10 * 2;
+      .link {
+        width: $w-100;
+        margin: $m-10 * 2 0;
+        border-radius: 20px 0 0 20px;
+        display: block;
+        padding: $p-10 $p-10 * 2;
+        text-decoration: none;
+        color: $tWhite;
+        font-weight: $medium;
+        transition: all 0.3s linear;
+        &:hover {
+          color: $tPrimary;
+          background: $primary;
+        }
+      }
+    }
+    @include respond(laptop) {
+      width: $w-100 - 70;
+    }
+    @include respond(extraTablet) {
+      display: none;
+    }
+  }
+  .user-template__content {
+    width: $w-100 - 20;
+    @include respond(extraTablet) {
+      width: $w-100;
+    }
+  }
+  @include respond(extraTablet) {
+    display: block;
+  }
+}

@@ -1,0 +1,203 @@
+.intro {
+  .intro__content {
+    padding: $p-10 * 8 0;
+    .content__inner {
+      display: flex;
+      justify-content: space-evenly;
+      .inner__detail {
+        width: $w-100 - 55;
+        .detail__title {
+          color: $tDark-1;
+          font-size: $subtitle-1;
+          font-weight: $medium;
+          .fa-graduation-cap {
+            margin-right: $m-10;
+          }
+          @include respond(phone) {
+            font-size: $subtitle-2;
+          }
+        }
+        .detail__info {
+          font-size: $body-2;
+          color: $tDark-2;
+          text-align: justify;
+        }
+        .detail__button {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-family: Arial, Helvetica, sans-serif;
+          .button--gradient,
+          .button--border-gradient {
+            text-decoration: none;
+            font-size: $body-4;
+            font-weight: $medium;
+            @include respond(extraTablet) {
+              margin-bottom: $m-10;
+            }
+          }
+          .button--gradient {
+            color: $tWhite;
+            margin-right: $m-10 * 2;
+          }
+          .button--border-gradient {
+            color: $tPrimary;
+            &:hover {
+              color: $tWhite;
+            }
+          }
+          @include respond(tablet) {
+            flex-direction: column;
+            align-items: flex-start;
+          }
+        }
+        @include respond(extraTablet) {
+          width: $w-100;
+        }
+      }
+      .inner__img {
+        width: $w-100 - 70;
+        .img__class {
+          width: $w-100;
+        }
+        @include respond(extraTablet) {
+          width: $w-100;
+        }
+      }
+      @include respond(extraTablet) {
+        flex-direction: column;
+      }
+    }
+    @include respond(extraTablet) {
+      padding: $p-10 * 3 $p-10;
+    }
+  }
+  .intro__road {
+    display: flex;
+    .road__inner {
+      width: $w-100 - 50;
+      height: $h-10 * 50;
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+      &::before {
+        content: "";
+        width: $w-100;
+        height: $h-100;
+        background: $RGBA-dark-2;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: all 0.3s linear;
+        z-index: 5;
+      }
+      &::after {
+        content: "";
+        width: 0;
+        height: 5px;
+        background: $gradient-purple-right;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        transition: all 0.5s ease-out;
+      }
+      .inner__img {
+        width: $w-100;
+        height: $h-100;
+        .img__class {
+          width: $w-100;
+          height: $h-100;
+          object-fit: cover;
+          object-position: center;
+          transform: scale(1,1);
+          transition: all 0.5s ease-out;
+        }
+      }
+      .inner__content {
+        width: $w-100;
+        height: $h-100;
+        text-decoration: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        .content {
+          color: $tWhite;
+          text-align: center;
+          .content__text {
+            font-size: $subtitle-2;
+            margin: 0;
+            @include respond(laptop) {
+              font-size: $body-1;
+            }
+            @include respond(extraTablet) {
+              font-size: $body-3;
+            }
+            &:first-child {
+              font-size: $h4;
+              font-weight: $medium;
+              margin: $m-10;
+              text-shadow: 0 0 5px $tDark-1;
+              @include respond(extraTablet) {
+                font-size: $h5;
+              }
+              @include respond(phone) {
+                font-size: $subtitle-2;
+              }
+            }
+          }
+        }
+      }
+      &:hover::before {
+        background: transparent;
+      }
+      &:hover::after {
+        width: $w-100;
+      }
+      &:hover .inner__img .img__class {
+        transform: scale(1.5,1.5);
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        height: $h-10 * 45;
+        margin-bottom: $m-5;
+      }
+      @include respond(phone) {
+        width: $w-100;
+        height: $h-10 * 35;
+        margin-bottom: $m-5;
+      }
+    }
+    .road__inner-1 {
+      clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+      -moz-clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 100%);
+      border-right: 2px solid $border--white;
+      @include respond(tablet) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        border: 0;
+      }
+    }
+    .road__inner-2 {
+      clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+      -webkit-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+      -moz-clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+      border-left: 2px solid $border--white;
+      @include respond(tablet) {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        -moz-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+        border: 0;
+      }
+    }
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
+}

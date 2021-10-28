@@ -1,0 +1,95 @@
+.carousel {
+  width: $w-100;
+  height: $h-10 * 60;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  -moz-clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5vw), 0 100%);
+  margin-bottom: -5vw;
+  .carousel__background {
+    width: $w-100;
+    height: $h-100;
+    position: relative;
+    .background__video {
+      width: $w-100;
+      height: $h-100;
+      user-select: none;
+      object-fit: cover;
+    }
+    &::after {
+      content: "";
+      width: $w-100;
+      height: $h-100;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background: $RGBA-dark-2;
+    }
+  }
+  .carousel__content {
+    width: $w-100;
+    height: $h-100;
+    padding: $p-10 * 10;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    .carousel__info {
+      .info__item {
+        letter-spacing: -1px;
+        color: $tWhite;
+        background: $gradient-purple-top;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -moz-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -moz-text-fill-color: transparent;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: $h3;
+        font-weight: $medium;
+        @include respond(phone) {
+          font-size: $h4;
+        }
+      }
+      .info__content {
+        color: $tWhite;
+        font-size: $h6;
+        font-weight: $medium;
+        @include respond(extraTablet) {
+          font-size: $body-1;
+        }
+        @include respond(phone) {
+          font-size: $body-2;
+        }
+      }
+      .info__button {
+        margin-top: $m-10 * 2;
+        display: flex;
+        align-items: center;
+        .button--gradient {
+          text-decoration: none;
+          color: $tWhite;
+          font-size: $body-2;
+          margin-right: $m-10 * 3;
+          @include respond(smallPhone) {
+            margin-bottom: $m-10;
+          }
+        }
+        .button--border-white {
+          text-decoration: none;
+          color: $tWhite;
+        }
+        @include respond(smallPhone) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    }
+    @include respond(phone) {
+      padding: $p-10 * 3;
+    }
+  }
+  @include respond(phone) {
+    height: $h-10 * 45;
+    margin-top: $m-10 * 5;
+  }
+}

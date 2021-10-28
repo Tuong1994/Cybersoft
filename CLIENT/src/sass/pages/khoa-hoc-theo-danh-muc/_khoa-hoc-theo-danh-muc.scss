@@ -1,0 +1,138 @@
+.course-by-category {
+  background: $purple-3;
+  padding: $p-10 * 5 $p-10 * 10;
+  .course-by-category__title {
+    margin-bottom: $m-10 * 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      color: $tWhite;
+      text-align: center;
+    }
+    .title__line {
+      width: $w-100 - 40;
+      height: 5px;
+      display: block;
+      background: $primary;
+    }
+  }
+  .course-by-category__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    .list__card {
+      width: $w-100 / 4.3;
+      padding: $p-10;
+      margin: $m-10;
+      text-decoration: none;
+      color: $tPrimary;
+      background-color: $primary;
+      border: 1px solid $border--dark-1;
+      border-radius: $radius-25;
+      overflow: hidden;
+      position: relative;
+      transition: all 0.5s ease-in-out;
+      &::after {
+        content: "";
+        width: $w-100;
+        height: 0;
+        background: $gradient-purple-top;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: height 0.3s linear;
+      }
+      &:hover {
+        background: transparent;
+      }
+      &:hover::after {
+        height: $h-100;
+      }
+      &:hover .card__content {
+        color: $tWhite;
+      }
+      &:hover .card__img .img {
+        transform: scale(1.1,1.1);
+      }
+      .card__img {
+        width: $w-100;
+        height: $h-10 * 20;
+        margin-bottom: $m-10 * 2;
+        overflow: hidden;
+        border-radius: $radius-25;
+        position: relative;
+        z-index: 999;
+        .img {
+          width: $w-100;
+          height: $h-100;
+          border-radius: $radius-25;
+          object-fit: cover;
+          transform: scale(1,1);
+          transition: all 0.3s linear;
+        }
+      }
+      .card__content {
+        margin-bottom: $m-10 * 2;
+        position: relative;
+        z-index: 999;
+        h5 {
+          font-size: $body-2;
+          margin: 0;
+        }
+        p {
+          font-size: $body-3;
+        }
+      }
+      .card__button {
+        width: $w-100;
+        display: flex;
+        justify-content: center;
+        .button--gradient {
+          text-decoration: none;
+          color: $tWhite;
+          font-size: $body-4;
+          font-weight: $medium;
+          border-radius: $radius-5;
+        }
+      }
+      @include respond(laptop) {
+        width: $w-100 / 4.2;
+        margin: $m-10;
+      }
+      @include respond(extraTablet) {
+        width: $w-100 / 3.3;
+        margin: $m-10;
+      }
+      @include respond(tablet) {
+        width: $w-100 / 2.2;
+        margin: $m-10;
+      }
+      @include respond(smallPhone) {
+        width: $w-100;
+        margin: $m-10 0;
+      }
+    }
+    @include respond(laptop) {
+      justify-content: center;
+    }
+    @include respond(smallPhone) {
+      flex-direction: column;
+    }
+  }
+  @include respond(laptop) {
+    padding: $p-10 * 7 $p-10;
+  }
+  @include respond(tablet) {
+    padding: $p-10 * 7 $p-10 * 4;
+  }
+  @include respond(phone) {
+    padding: $p-10 * 7 $p-10 * 2;
+  }
+  @include respond(smallPhone) {
+    padding: $p-10 * 7 $p-10 * 3;
+  }
+  @include respond(extraSmallPhone) {
+    padding: $p-10 * 7 $p-10;
+  }
+}

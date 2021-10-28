@@ -1,0 +1,282 @@
+.tabs {
+  background: $white;
+  margin-bottom: $m-10  * 65;
+  .tabs__title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 15px $grey;
+    .title {
+      cursor: pointer;
+      padding: $p-10 * 1.5 $p-10 * 2;
+      position: relative;
+      &::after {
+        content: "";
+        width: 0;
+        height: 5px;
+        background: $gradient-purple-right;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transition: width 0.3s linear;
+      }
+    }
+    .title-active {
+      font-weight: $medium;
+      &::after {
+        width: $w-100;
+      }
+    }
+  }
+  .tabs__content {
+    position: relative;
+    .content {
+      width: $w-100;
+      height: $h-10 * 60;
+      padding: $p-10 * 5 $p-10 * 10;
+      box-shadow: 0 0 5px $grey;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s linear;
+      .content__intro {
+        display: flex;
+        justify-content: center;
+        .intro__content {
+          width: $w-100 - 50;
+          padding-right: $p-10 * 5;
+          .content__title {
+            font-size: $h4;
+            @include respond(extraTablet) {
+              font-size: $h6;
+            }
+          }
+          .content__text {
+            text-align: justify;
+          }
+          .content__button {
+            .button--gradient {
+              text-decoration: none;
+              color: $tWhite;
+              font-size: $body-4;
+              font-weight: $medium;
+            }
+          }
+          @include respond(extraTablet) {
+            width: $w-100 - 40;
+          }
+        }
+        .intro__img {
+          width: $w-100 - 65;
+          height: $h-10 * 25;
+          position: relative;
+          &::after {
+            content: "";
+            width: $w-100;
+            height: $h-100;
+            background: $RGBA-dark-2;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .img__class {
+            width: $w-100;
+            height: $h-100;
+            object-fit: cover;
+            object-position: center;
+          }
+          .img__play-button {
+            display: block;
+            cursor: pointer;
+            width: $w-10 * 7;
+            height: $h-10 * 7;
+            text-align: center;
+            line-height: $h-10 * 7;
+            border: 2px solid $border--white;
+            border-radius: $radius-round;
+            background-image: $gradient-purple-right;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s linear;
+            z-index: 999;
+            &:hover {
+              width: $w-10 * 8;
+              height: $h-10 * 8;
+              line-height: $h-10 * 8;
+            }
+          }
+          @include respond(extraTablet) {
+            width: $w-100 - 60;
+          }
+        }
+      }
+      .content__progress {
+        display: flex;
+        justify-content: center;
+        .progress__content {
+          width: $w-100 - 60;
+          padding-right: $p-10 * 5;
+          .content__info {
+            text-align: justify;
+            .info__text {
+              margin-left: $m-10 * 3;
+              padding: 0 $p-10 * 2;
+              border-left: 5px solid $border--grey;
+            }
+          }
+          .content__author {
+            width: $w-100;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: $m-10 * 3;
+            .author {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              width: $w-100 - 70;
+              margin-right: $m-10 * 2;
+              .author__img {
+                border-radius: $radius-round;
+              }
+              .author__info {
+                font-size: $body-5;
+              }
+              .author__name {
+                font-weight: $medium;
+              }
+            }
+            .author__thought {
+              width: $w-100 - 15;
+              font-size: $body-6;
+              padding: $p-10 $p-10 * 3;
+              background: $light-grey;
+              box-shadow: 0 0 10px $grey;
+              border-radius: $radius-5;
+              font-style: italic;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              .thought {
+                margin: 0;
+              }
+              @include respond(tablet) {
+                width: $w-100 - 40;
+                padding: $p-10;
+              }
+            }
+          }
+          .content__button {
+            .button--gradient {
+              text-decoration: none;
+              color: $tWhite;
+              font-size: $body-4;
+              font-weight: $medium;
+            }
+          }
+          @include respond(laptop) {
+            width: $w-100 - 40;
+          }
+        }
+        .progress__img {
+          width: $w-100 - 65;
+          height: $h-10 * 25;
+          position: relative;
+          &::after {
+            content: "";
+            width: $w-100;
+            height: $h-100;
+            background: $RGBA-dark-2;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+          .img__student {
+            width: $w-100;
+            height: $h-100;
+            object-fit: cover;
+            object-position: center;
+          }
+          .img__play-button {
+            display: block;
+            cursor: pointer;
+            width: $w-10 * 7;
+            height: $h-10 * 7;
+            text-align: center;
+            line-height: $h-10 * 7;
+            border: 2px solid $border--white;
+            border-radius: $radius-round;
+            background-image: $gradient-purple-right;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -moz-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            -moz-text-fill-color: transparent;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.3s linear;
+            z-index: 999;
+            &:hover {
+              width: $w-10 * 8;
+              height: $h-10 * 8;
+              line-height: $h-10 * 8;
+            }
+          }
+        }
+      }
+      .content__student {
+        display: flex;
+        justify-content: center;
+        .student {
+          width: $w-100 / 4;
+          margin: 0 $m-5;
+          border-radius: $radius-5;
+          box-shadow: 0 0 5px $grey;
+          overflow: hidden;
+          .student__img {
+            width: $w-100;
+            margin-bottom: $m-10;
+            .img__student {
+              width: $w-100;
+            }
+          }
+          .student__review {
+            padding: $p-5;
+            .review__title {
+              text-align: center;
+              font-weight: $medium;
+            }
+            .review__content,
+            .review__info {
+              text-align: justify;
+              font-size: $body-3;
+            }
+          }
+          @include  respond(extraTablet) {
+              width: $w-100 / 3;
+          }
+        }
+      }
+      @include respond(laptop) {
+        padding: $p-10 * 5 $p-10;
+      }
+    }
+    .content-active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  @include respond(phone) {
+      display: none;
+  }
+}

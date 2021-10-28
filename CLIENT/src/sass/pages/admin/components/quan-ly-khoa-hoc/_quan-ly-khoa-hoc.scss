@@ -1,0 +1,470 @@
+.course-manage {
+  width: $w-100;
+  padding: $p-10 * 5 $p-10 * 2;
+  .course-manage__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .title__name {
+      width: $w-100 / 2;
+      @include respond(laptop) {
+        font-size: $subtitle-1;
+      }
+      @include respond(tablet) {
+        width: $w-100;
+        text-align: center;
+        font-size: $subtitle-2;
+        margin-bottom: $m-10 * 2;
+      }
+    }
+    .title__input {
+      width: $w-100 / 2;
+      display: flex;
+      justify-content: space-between;
+      .input__search {
+        width: $w-100 - 40;
+        border: 1px solid $border--dark-2;
+        border-radius: $radius-5;
+        padding: $p-5 $p-10 * 2;
+        display: flex;
+        align-items: center;
+        .input {
+          width: $w-100;
+          font-size: $body-3;
+          border: 0;
+          outline: none;
+        }
+        .fa {
+          cursor: pointer;
+        }
+        @include respond(laptop) {
+          width: $w-100 - 45;
+        }
+        @include respond(tablet) {
+          width: $w-100 - 25;
+        }
+      }
+      .input__button {
+        width: $w-100 - 65;
+        font-size: $body-4;
+        font-weight: $medium;
+        border-radius: $radius-5;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        z-index: 99;
+        span {
+          @include respond(tablet) {
+            display: none;
+          }
+        }
+        @include respond(laptop) {
+          width: $w-100 - 60;
+          font-size: $body-5;
+        }
+        @include respond(tablet) {
+          width: $w-100 - 85;
+          justify-content: center;
+        }
+      }
+      @include respond(tablet) {
+        width: $w-100;
+      }
+    }
+    @include respond(tablet) {
+      flex-direction: column;
+    }
+  }
+  .course-manage__line {
+    display: block;
+    width: $w-100;
+    height: 3px;
+    background: $purple-1;
+    margin: $m-10 * 2 0;
+  }
+  .course-manage__list {
+    width: $w-100;
+    overflow: auto;
+    position: relative;
+    .list {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      position: relative;
+      .list__card {
+        width: $w-100 - 51;
+        margin-bottom: $m-10 * 2;
+        border: 1px solid $border--purple;
+        border-radius: $radius-5;
+        &:hover .card__wrapper::after {
+          width: $w-100;
+        }
+        &:hover .wrapper__info {
+          color: $tWhite;
+        }
+        .card__wrapper {
+          display: flex;
+          justify-content: space-between;
+          padding: $p-10;
+          overflow: hidden;
+          position: relative;
+          &::after {
+            content: "";
+            width: 0;
+            height: $h-100;
+            background: $purple-1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: all 0.5s ease-in-out;
+          }
+          .wrapper__image {
+            width: $w-100 - 70;
+            height: $h-10 * 10;
+            border-radius: $radius-5;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            &:hover .image__button {
+              opacity: 1;
+            }
+            &:hover .image__button .fa {
+              opacity: 1;
+              transform: translateY(0);
+            }
+            .image {
+              width: $w-100;
+              height: $h-100;
+              object-fit: cover;
+            }
+            .image__button {
+              width: $w-100;
+              height: $h-100;
+              background: $RGBA-white-1;
+              overflow: hidden;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              position: absolute;
+              top: 0;
+              left: 0;
+              opacity: 0;
+              transition: all 0.3s ease;
+              .fa {
+                font-size: $subtitle-1;
+                margin: 0;
+                background: $gradient-purple-right;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -moz-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                -moz-text-fill-color: transparent;
+                opacity: 0;
+                transform: translateY(50%);
+                transition: all 0.5s ease;
+              }
+            }
+            @include respond(laptop) {
+              width: $w-100;
+              height: $h-10 * 15;
+              margin-bottom: $m-10;
+            }
+            @include respond(smallPhone) {
+              width: $w-100;
+              margin-bottom: $m-10;
+            }
+          }
+          .wrapper__info {
+            width: $w-100 - 35;
+            transition: all 0.3s ease;
+            .info__content {
+              display: flex;
+              justify-content: space-between;
+              font-size: $body-3;
+              strong {
+                width: $w-100 - 70;
+                @include respond(phone) {
+                  width: $w-100 - 65;
+                }
+              }
+              p {
+                display: block;
+                width: $w-100 - 35;
+                margin: 0;
+              }
+              @include respond(laptop) {
+                font-size: $body-4;
+              }
+              @include respond(phone) {
+                font-size: $body-4;
+              }
+            }
+            @include respond(laptop) {
+              width: $w-100;
+            }
+          }
+          @include respond(laptop) {
+            flex-direction: column;
+          }
+        }
+        .card__line {
+          width: $w-100;
+          height: 2px;
+          background: $purple-1;
+        }
+        .card__button {
+          width: $w-100;
+          padding: $p-10;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          .button__list {
+            font-size: $body-4;
+            padding: $p-10 - 5;
+            cursor: pointer;
+            border: 1px solid transparent;
+            border-radius: $radius-5;
+            transition: all 0.3s ease;
+            &:hover {
+              border-color: $border--purple;
+              color: $tPurple;
+            }
+            .fa {
+              margin-right: $m-10;
+              @include respond(extraTablet) {
+                font-size: $body-1;
+                margin: 0;
+              }
+            }
+            span {
+              @include respond(extraTablet) {
+                display: none;
+              }
+            }
+          }
+          .button__wrapper {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            .wrapper {
+              width: $w-10 * 8;
+              padding: $p-10 - 8;
+              margin: 0 $m-10 * 1.5;
+              cursor: pointer;
+              background: $purple-1;
+              border: 1px solid transparent;
+              border-radius: $radius-5;
+              position: relative;
+              transition: all 0.3s linear;
+              &:hover {
+                background: transparent;
+                border-color: $border--purple;
+              }
+              &:hover .wrapper__note {
+                opacity: 1;
+                visibility: visible;
+              }
+              &:hover .button {
+                color: $tPurple;
+              }
+              .wrapper__note {
+                width: $w-100;
+                padding: $p-5;
+                font-size: $body-5;
+                color: $tWhite;
+                text-align: center;
+                background: $dark-1;
+                border-radius: $radius-5;
+                position: absolute;
+                top: -150%;
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.2s linear;
+                @include respond(tablet) {
+                  display: none;
+                }
+              }
+              .button {
+                display: block;
+                width: $w-100;
+                text-align: center;
+                font-size: $body-3;
+                color: $tWhite;
+              }
+            }
+          }
+        }
+        .card__viewmore {
+          width: $w-100;
+          height: $h-10 * 15;
+          border-top: 1px solid $border--purple;
+          font-size: $body-3;
+          overflow: auto;
+          .viewmore__info {
+            padding: $p-10;
+          }
+        }
+        @include respond(phone) {
+          display: none;
+        }
+      }
+      .list__note {
+        width: $w-100;
+        height: $h-10 * 30;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include respond(phone) {
+          display: none;
+        }
+      }
+      .list__student {
+        width: $w-100;
+        height: $h-100;
+        background: $RGBA-dark-2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999999;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        .student__wrapper {
+          width: $w-100 - 50;
+          padding: $p-10 * 2;
+          background: $purple-1;
+          overflow: auto;
+          color: $tWhite;
+          opacity: 0;
+          transform: translateX(40%);
+          transition: all 0.5s ease;
+          .wrapper__title {
+            text-align: center;
+            margin-bottom: $m-10 * 2;
+          }
+          .wrapper__list {
+            margin-bottom: $m-10 * 2;
+            .list__content {
+              width: $w-100;
+              height: $h-10 * 25;
+              border: 1px solid $border--white;
+              border-radius: $radius-5;
+              overflow: auto;
+              .content__table {
+                width: $w-100;
+                thead,
+                tbody {
+                  tr {
+                    td,
+                    th {
+                      width: $w-100 / 6;
+                      padding: $p-10 - 5;
+                      font-size: $body-3;
+                      text-align: center;
+                      vertical-align: middle;
+                    }
+                  }
+                }
+                thead {
+                  tr {
+                    border-bottom: 1px solid $border--white;
+                  }
+                }
+                tbody {
+                  tr {
+                    transition: all 0.3s ease;
+                    &:hover {
+                      background: $primary;
+                      color: $tPrimary;
+                    }
+                    td {
+                      font-size: $body-4;
+                      .table__button {
+                        width: $w-100;
+                        display: flex;
+                        justify-content: center;
+                        .button--gradient {
+                          display: flex;
+                          justify-content: center;
+                          align-items: center;
+                          cursor: pointer;
+                          .button-loading {
+                            margin: 0;
+                          }
+                        }
+                        .button--gradient-disabled {
+                          opacity: 0.5;
+                          user-select: none;
+                          pointer-events: none;
+                        }
+                      }
+                    }
+                  }
+                }
+                @include respond(phone) {
+                  width: $w-100 * 2;
+                }
+                @include respond(smallPhone) {
+                  width: $w-100 * 3;
+                }
+              }
+              .content__note {
+                width: $w-100;
+                height: $h-100;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+          .wrapper__button {
+            width: $w-100;
+            display: flex;
+            justify-content: center;
+            .button--gradient {
+              cursor: pointer;
+            }
+          }
+          @include respond(laptop) {
+            width: $w-100 - 15;
+          }
+          @include respond(extraTablet) {
+            width: $w-100 - 10;
+            height: $h-10 * 40;
+          }
+          @include respond(tablet) {
+            width: $w-100 - 10;
+            height: $h-10 * 35;
+          }
+          @include respond(phone) {
+            width: $w-100 - 10;
+            height: $h-10 * 30;
+          }
+          @include respond(smallPhone) {
+            width: $w-100;
+            height: $h-100;
+          }
+        }
+        .student__wrapper--active {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+      .list__student--active {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+  .pagination {
+    @include respond(phone) {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,101 @@
+.add-user {
+  width: $w-100;
+  height: $h-100;
+  background: $RGBA-black-4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s linear;
+  .add-user__wrapper {
+    width: $w-100 - 30;
+    color: $tWhite;
+    background: $purple-1;
+    border-radius: $radius-5;
+    padding: $p-10 * 2;
+    opacity: 0;
+    transform: translateX(40%);
+    position: relative;
+    transition: all 0.5s ease;
+    .wrapper__close {
+      font-size: $body-1;
+      cursor: pointer;
+      position: absolute;
+      top: 2%;
+      right: 2%;
+      @include respond(phone) {
+        top: 2%;
+        right: 4%;
+      }
+    }
+    h3 {
+      @include respond(phone) {
+        font-size: $subtitle-2;
+      }
+    }
+    .wrapper__form {
+      width: $w-100;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .form__group--input,
+      .form__group--password,
+      .form__group--select {
+        width: $w-100 / 2.1;
+        margin: $m-10 * 1.5 0;
+        @include respond(tablet) {
+          width: $w-100;
+        }
+      }
+      .form__group--textarea {
+        width: $w-100;
+      }
+      .form__button {
+        width: $w-100;
+        margin: $m-10 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .button--gradient,
+        .button--disabled {
+          display: flex;
+          outline: none;
+          font-size: $body-3;
+          font-weight: $medium;
+          padding: $p-10 $p-10 * 2;
+          border-radius: $radius-5;
+        }
+        .button--gradient-disabled {
+          opacity: 0.5;
+          user-select: none;
+          pointer-events: none;
+        }
+      }
+    }
+    @include respond(extraTablet) {
+      width: $w-100 - 30;
+      height: $h-100 - 10;
+      border-radius: 0;
+      overflow: scroll;
+    }
+    @include respond(phone) {
+      width: $w-100;
+      height: $h-100;
+      border-radius: 0;
+      overflow: scroll;
+    }
+  }
+  .add-user__wrapper--active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.add-user--show {
+  opacity: 1;
+  visibility: visible;
+}

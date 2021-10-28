@@ -1,0 +1,109 @@
+.online {
+  background: $light-blue;
+  padding: $p-10 * 10;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+  .online__bubble--red {
+    width: $w-10 * 20;
+    height: $h-10 * 20;
+    border-radius: $radius-round;
+    background: $light-red;
+    position: absolute;
+    top: -20%;
+    left: 2%;
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+  .online__bubble--blue {
+    width: $w-10 * 20;
+    height: $h-10 * 20;
+    border-radius: $radius-round;
+    background: $blue;
+    position: absolute;
+    bottom: -20%;
+    right: 2%;
+    @include respond(tablet) {
+      display: none;
+    }
+  }
+  .online__img {
+    width: $w-100 - 65;
+    position: relative;
+    .img__bubble {
+      width: $w-100;
+    }
+    @include respond(tablet) {
+      width: $w-100 - 20;
+      margin-bottom: $m-10;
+    }
+    @include respond(phone) {
+      width: $w-100;
+      margin-bottom: $m-10;
+    }
+  }
+  .online__info {
+    width: $w-100 - 50;
+    .info__detail {
+      .detail__title {
+        color: $tDark-1;
+        font-size: $h6;
+        font-weight: $medium;
+        margin-bottom: $m-10 * 3;
+        @include respond(tablet) {
+          text-align: center;
+        }
+        @include respond(phone) {
+          font-size: $subtitle-1;
+          text-align: center;
+        }
+      }
+      .detail__text {
+        color: $tDark-2;
+        font-size: $body-1;
+      }
+    }
+    .info__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, Helvetica, sans-serif;
+      .button--gradient,
+      .button--border-gradient {
+        text-decoration: none;
+        font-size: $body-4;
+        font-weight: $medium;
+        @include respond(smallPhone) {
+          margin-bottom: $m-10;
+        }
+      }
+      .button--gradient {
+        color: $tWhite;
+        margin-right: $m-10 * 2;
+      }
+      .button--border-gradient {
+        color: $tPrimary;
+        &:hover {
+          color: $tWhite;
+        }
+      }
+      @include respond(smallPhone) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    @include respond(tablet) {
+      width: $w-100;
+    }
+  }
+  @include respond(laptop) {
+    padding: $p-10 * 5 $p-10 * 8;
+  }
+  @include respond(extraTablet) {
+    padding: $p-10 * 5 $p-10;
+    flex-direction: column;
+  }
+}

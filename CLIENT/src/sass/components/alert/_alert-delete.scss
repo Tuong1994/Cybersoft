@@ -1,0 +1,63 @@
+.alert-box {
+    width: $w-100;
+    height: $h-100;
+    background: $RGBA-dark-2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    .alert-box__wrapper {
+        width: $w-100 - 65;
+        padding: $p-10 * 2;
+        border-radius: $radius-5;
+        color: $tWhite;
+        text-align: center;
+        background: $purple-1;
+        opacity: 0;
+        transform: translateX(40%);
+        transition: all 0.5s ease;
+        .wrapper__icon {
+            font-size: $h6;
+        }
+        .wrapper__title {
+            font-size: $subtitle-1;
+            margin: $m-10 * 2 0;
+        }
+        .wrapper__button {
+            width: $w-100;
+            display: flex;
+            justify-content: center;
+            .button--gradient {
+                display: flex;
+                margin: 0 $m-10 * 2;
+                cursor: pointer;
+            }
+            .button--gradient-disabled {
+                opacity: 0.5;
+                user-select: none;
+                pointer-events: none;
+            }
+        }
+        @include respond(laptop) {
+            width: $w-100 - 35;
+        }
+        @include respond(phone) {
+            width: $w-100 - 10;
+        }
+    }
+    .alert-box__wrapper--active {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.alert-box--active {
+    opacity: 1;
+    visibility: visible;
+}

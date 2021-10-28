@@ -1,0 +1,38 @@
+.form__group--file {
+  .group__content {
+    width: $w-100;
+    position: relative;
+    font-size: $body-4;
+    .content__input {
+      width: $w-100;
+      padding: $p-10 * 1.5;
+      border: 1px solid $border--white;
+      border-radius: $radius-5;
+      outline: none;
+      color: $tWhite;
+      background: transparent;
+      &:focus + .content__name,
+      &:not(:placeholder-shown) + .content__name {
+        top: -25%;
+        background: $purple-1;
+        padding: 0 $p-10;
+      }
+      &:focus + .content__name--textarea,
+      &:not(:placeholder-shown) + .content__name--textarea {
+        top: -10%;
+      }
+    }
+    .content__name {
+      position: absolute;
+      user-select: none;
+      pointer-events: none;
+      top: 20%;
+      left: 5%;
+      transition: all 0.3s linear;
+    }
+  }
+  .group__errors {
+    font-size: $body-4;
+    color: $tRed;
+  }
+}

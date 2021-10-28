@@ -1,0 +1,79 @@
+.update-user {
+  width: $w-100;
+  padding: $p-10 * 5;
+  position: relative;
+  .update-user__wrapper {
+    width: $w-100 - 30;
+    color: $tWhite;
+    background: $purple-1;
+    border-radius: $radius-5;
+    margin: auto;
+    padding: $p-10 * 2;
+    position: relative;
+    h3 {
+      text-align: center;
+      @include respond(phone) {
+        font-size: $body-2;
+      }
+    }
+    .wrapper__line {
+      display: block;
+      width: $w-100;
+      height: 2px;
+      background: $primary;
+      margin: $m-10 * 2 0;
+    }
+    .wrapper__form {
+      width: $w-100;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .form__group--input,
+      .form__group--password,
+      .form__group--select {
+        width: $w-100 / 2.1;
+        margin: $m-10 * 1.5 0;
+        @include respond(tablet) {
+          width: $w-100;
+        }
+      }
+      .form__button {
+        width: $w-100;
+        margin: $m-10 0;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        .button--gradient,
+        .button--disabled {
+          display: flex;
+          outline: none;
+          text-decoration: none;
+          color: $tWhite;
+          font-size: $body-3;
+          font-weight: $medium;
+          padding: $p-10 $p-10 * 2;
+          border-radius: $radius-5;
+        }
+        .button--gradient-disabled {
+          opacity: 0.5;
+          user-select: none;
+          pointer-events: none;
+        }
+      }
+    }
+    @include respond(laptop) {
+      width: $w-100 - 15;
+    }
+    @include respond(extraTablet) {
+      width: $w-100 - 15;
+      height: $h-100 - 10;
+    }
+    @include respond(phone) {
+      width: $w-100;
+      height: $h-100;
+    }
+  }
+  @include respond(phone) {
+    padding: $p-10;
+  }
+}

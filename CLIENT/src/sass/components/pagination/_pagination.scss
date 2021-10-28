@@ -1,0 +1,43 @@
+.pagination {
+    width: $w-100;
+    padding: $p-10;
+    overflow-x: auto;
+    margin: $m-10 * 2 0;
+    .pagination__wrapper {
+        min-width: $w-100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .wrapper__button {
+            min-width: $w-10 * 3;
+            min-height: $h-10 * 3;
+            margin: 0 $m-10;
+            padding: $p-10 - 5;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            font-size: $body-4;
+            color: $tPurple;
+            border: 1px solid $border--purple;
+            border-radius: $radius-5;
+            background: transparent;
+            outline: none;
+            transition: all 0.5s ease;
+            &:hover {
+                background: $purple-1;
+                color: $tWhite;
+            }
+        }
+        .wrapper__button--active {
+            background: $purple-1;
+            color: $tWhite;
+        }
+        @include respond(smallPhone) {
+            min-width: $w-100 * 1.2;
+        }
+        @include respond(extraSmallPhone) {
+            min-width: $w-100 * 1.5;
+        }
+    }
+}

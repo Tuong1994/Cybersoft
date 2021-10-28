@@ -1,0 +1,136 @@
+.login {
+  width: $w-100;
+  padding: $p-10 * 5;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .login__wrapper {
+    width: $w-100 - 65;
+    padding: $p-10 * 2;
+    color: $tWhite;
+    font-weight: $medium;
+    background: $purple-1;
+    border-radius: $radius-5;
+    .wrapper__img {
+      width: $w-100;
+      margin-bottom: $m-10 * 3;
+      display: flex;
+      justify-content: center;
+      .img {
+        width: $w-100 - 20;
+      }
+    }
+    .wrapper__line {
+      display: block;
+      width: $w-100;
+      height: 5px;
+      background: $primary;
+      margin-bottom: $m-10 * 3;
+    }
+    .wrapper__title {
+      margin-bottom: $m-10;
+      text-align: center;
+      font-size: $h6;
+      color: $tWhite;
+    }
+    .wrapper__form {
+      width: $w-100;
+      .form__group {
+        margin: $m-10 * 2 0;
+        .group__content {
+          position: relative;
+          margin-bottom: $m-10 0;
+          .content__input {
+            width: $w-100;
+            padding: $p-10 * 1.5;
+            outline: none;
+            border: 1px solid $border--white;
+            border-radius: $radius-5;
+            background: transparent;
+            color: $tWhite;
+            transition: all 0.2s linear;
+            &:focus {
+              border-color: $border--red;
+            }
+            &:focus + .content__label,
+            &:not(:placeholder-shown) + .content__label {
+              top: -25%;
+              color: $tRed;
+              background: $purple-1;
+              padding: 0 $p-5;
+            }
+          }
+          .fa {
+            position: absolute;
+            top: 30%;
+            right: 5%;
+          }
+          .content__label {
+            color: $tWhite;
+            font-size: $body-4;
+            user-select: none;
+            pointer-events: none;
+            position: absolute;
+            top: 30%;
+            left: 5%;
+            transition: all 0.2s linear;
+          }
+        }
+        .group__errors {
+          display: block;
+          padding: $p-5 $p-10;
+          font-size: $body-4;
+          color: $tRed;
+        }
+      }
+      .form__button {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .button--gradient,
+        .button--disabled {
+          display: flex;
+          color: $tWhite;
+          outline: none;
+          font-weight: $medium;
+          padding: $p-10 $p-10 * 2;
+          margin-bottom: $m-10 * 2;
+          border-radius: $radius-5;
+        }
+        .button--gradient-disabled {
+          opacity: 0.5;
+          user-select: none;
+          pointer-events: none;
+        }
+        .button__text {
+          font-size: $body-5;
+          span {
+            margin-right: $m-10;
+          }
+          .text__link {
+            font-size: $body-3;
+            text-decoration: none;
+            color: $tRed;
+          }
+        }
+      }
+    }
+    @include respond(laptop) {
+        width: $w-100 - 50;
+    }
+    @include respond(extraTablet) {
+        width: $w-100;
+    }
+  }
+  @include respond(extraTablet) {
+      padding: $p-10 * 8 $p-10 * 5;
+  }
+  @include respond(phone) {
+      padding: $p-10 * 8 $p-10 * 4;
+  }
+  @include respond(extraSmallPhone) {
+      padding: $p-10 * 8 $p-10;
+  }
+}

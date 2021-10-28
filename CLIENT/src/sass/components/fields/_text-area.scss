@@ -1,0 +1,46 @@
+.form__group--textarea {
+  width: $w-100;
+  margin: $m-10 * 1.5 0;
+  .group__content {
+    width: $w-100;
+    position: relative;
+    font-size: $body-3;
+    .content__input {
+      width: $w-100;
+      padding: $p-10 * 2;
+      font-size: $body-4;
+      border: 1px solid $border--white;
+      border-radius: $radius-5;
+      outline: none;
+      color: $tWhite;
+      background: transparent;
+      &:focus + .content__name--textarea,
+      &:not(:placeholder-shown) + .content__name--textarea {
+        top: -10%;
+        background: $purple-1;
+        padding: 0 $p-10;
+      }
+    }
+    .content__input--invalid {
+      border-color: $border--red;
+    }
+    .content__name--textarea {
+      position: absolute;
+      user-select: none;
+      pointer-events: none;
+      top: 10%;
+      left: 2%;
+      transition: all 0.3s linear;
+    }
+    .content__name--textarea--invalid {
+      color: $tRed;
+    }
+  }
+  .group__errors {
+    font-size: $body-4;
+    color: $tRed;
+  }
+  @include respond(tablet) {
+    width: $w-100;
+  }
+}

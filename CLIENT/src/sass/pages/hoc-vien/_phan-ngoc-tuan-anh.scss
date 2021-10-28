@@ -1,0 +1,72 @@
+.student-eight {
+  padding: $p-10 * 5 $p-10 * 10;
+  .student-eight__wrapper {
+    font-size: $body-3;
+    margin-bottom: $m-10 * 2;
+    text-align: justify;
+    .wrapper__content {
+      margin-bottom: $m-10 * 2;
+      height: auto;
+      .content {
+        width: $w-100;
+        h4 {
+          text-align: center;
+          @include respond(extraTablet) {
+            font-size: $subtitle-2;
+          }
+        }
+        @include respond(extraTablet) {
+          width: $w-100;
+        }
+      }
+      @include respond(laptop) {
+        margin-bottom: $m-10 * 10;
+      }
+      @include respond(extraTablet) {
+        flex-direction: column;
+        height: auto;
+        margin-bottom: $m-10;
+      }
+    }
+    .wrapper {
+      display: flex;
+      width: $w-100;
+      height: $h-10 * 50;
+      .wrapper__img {
+        width: $w-100 / 2;
+        height: $h-100;
+        .img {
+          width: $w-100;
+          height: $h-100;
+          object-fit: cover;
+        }
+        @include respond(extraTablet) {
+          width: $w-100;
+        }
+      }
+      @include respond(extraTablet) {
+        flex-direction: column;
+        height: auto;
+        margin: $m-10 * 2 0;
+      }
+    }
+  }
+  .student-eight__img {
+    width: $w-100;
+    display: flex;
+    justify-content: center;
+    .img {
+      width: $w-100;
+      @include respond(extraTablet) {
+        width: $w-100;
+      }
+    }
+  }
+  @include respond(laptop) {
+    padding: $p-10 * 5 $p-10;
+  }
+  @include respond(extraTablet) {
+    margin-top: $m-10 * 7;
+    padding: $p-10 * 5 $p-10;
+  }
+}
