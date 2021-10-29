@@ -304,19 +304,27 @@
           transition: height 0.3s linear;
           .logout__link {
             width: $w-100;
-            padding: $p-5 $p-10;
+            padding: $p-10;
             text-decoration: none;
             color: $tWhite;
             font-size: $body-4;
-            text-align: center;
             cursor: pointer;
             display: block;
             transition: all 0.3s linear;
             &:hover {
               background: $RGBA-white-2;
             }
+            .fa {
+              margin-left: $m-10;
+              margin-right: $m-10 * 2;
+            }
             .button-loading {
+              margin-left: $m-10;
+              margin-right: $m-10 * 2;
               display: inline-block;
+              .fa {
+                margin: auto;
+              }
             }
           }
           .logout__link-loading {
@@ -326,7 +334,7 @@
           }
         }
         .user__logout--height {
-          height: $h-10 * 8;
+          height: $h-10 * 12;
         }
         @include respond(laptop) {
           display: none;

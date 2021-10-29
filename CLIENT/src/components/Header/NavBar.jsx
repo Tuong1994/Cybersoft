@@ -85,15 +85,22 @@ function NavBar() {
                         <Link to="/thong_tin_hoc_vien" className="user__link">
                             {thongTinTaiKhoan?.hoTen}
                         </Link>
-                        <i className="fa fa-align-right" onClick={() => {
+                        <i className="fa fa-list-ul" onClick={() => {
                             setUser(!user)
                         }}></i>
                         <div className={user ? "user__logout user__logout--height" : "user__logout"} ref={userRef}>
                             {thongTinTaiKhoan?.maLoaiNguoiDung === "GV" ?
-                                <Link className="logout__link" to="/quan_ly_khoa_hoc">QUẢN TRỊ</Link>
+                                <Link className="logout__link" to="/quan_ly_khoa_hoc">
+                                    <i className="fa fa-user-cog"></i>
+                                    <span>Quản trị</span>
+                                </Link>
                                 : null
                             }
-                            <span className={buttonLoading ? "logout__link logout__link-loading" : "logout__link"} onClick={() => {
+                            <Link to="/thong_tin_hoc_vien" className="logout__link">
+                                <i className="fa fa-user"></i>
+                                <span>Tài khoản</span>
+                            </Link>
+                            <div className={buttonLoading ? "logout__link logout__link-loading" : "logout__link"} onClick={() => {
                                 dispatch({
                                     type: "OPEN_BUTTON_LOADING"
                                 })
@@ -108,9 +115,13 @@ function NavBar() {
                                     history.push("/")
                                 }, 1000)
                             }}>
-                                <ButtonLoading />
-                                <span>ĐĂNG XUẤT</span>
-                            </span>
+                                {buttonLoading ?
+                                    <ButtonLoading />
+                                    :
+                                    <i className="fa fa-power-off"></i>
+                                }
+                                <span>Đăng xuất</span>
+                            </div>
                         </div>
                     </div>
                 }

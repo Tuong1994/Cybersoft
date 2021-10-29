@@ -14,29 +14,66 @@
       padding-right: $p-10 * 2;
       border-right: 1px solid $border--dark-1;
       .user {
-        display: block;
         display: flex;
         align-items: center;
         font-weight: $medium;
+        position: relative;
         .user__link {
+          display: block;
           text-decoration: none;
           color: $tPrimary;
           margin-right: $m-10 * 2;
         }
-        .user__logout {
-          font-size: $body-3;
-          color: $tRed;
+        .user__button {
+          cursor: pointer;
+        }
+        .user__info {
+          width: $w-100;
+          height: 0;
           display: flex;
+          flex-direction: column;
+          justify-content: center;
+          border-radius: $radius-5;
+          overflow: hidden;
+          background: $purple-1;
+          position: absolute;
+          top: 60%;
+          left: 0;
+          z-index: 99999999;
+          transition: all 0.3s ease;
+          .info__link {
+            font-size: $body-4;
+            display: block;
+            text-decoration: none;
+            color: $tWhite;
+            margin: 0;
+            padding: $p-10;
+            cursor: pointer;
+            transition: all 0.5s ease;
+            &:hover {
+              background: $RGBA-white-2;
+            }
+            .fa {
+              margin-left: $m-10;
+              margin-right: $m-10 * 2;
+            }
+            .button-loading {
+              display: inline-block;
+              margin-left: $m-10;
+              margin-right: $m-10 * 2;
+              .fa {
+                margin: auto;
+              }
+            }
+          }
+          .info__link-loading {
+            opacity: 0.5;
+            user-select: none;
+            pointer-events: none;
+          }
         }
-        .user__logout-loading {
-          opacity: 0.5;
-          user-select: none;
-          pointer-events: none;
-        }
-        .user__link {
-          text-decoration: none;
-          color: $tPrimary;
-          margin: 0 $m-10 * 2;
+        .user__info--active {
+          height: $h-10 * 12;
         }
       }
     }
@@ -226,38 +263,67 @@
     }
     .inner__user {
       width: $w-100;
-      text-align: center;
       font-weight: $medium;
-      .user__link {
-        text-decoration: none;
-        color: $tWhite;
-        margin-right: $m-10 * 2;
+      position: relative;
+      .user__name {
+        width: $w-100;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .name__link {
+          text-decoration: none;
+          color: $tWhite;
+          margin-right: $m-10 * 2;
+        }
+        .name__button {
+          color: $tWhite;
+          cursor: pointer;
+        }
       }
-      .user__logout {
-        font-size: $body-4;
-        color: $tRed;
-        .button-loading {
-          display: inline-block;
+      .user__info {
+        width: $w-100 - 50;
+        height: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        overflow: hidden;
+        background: $purple-1;
+        border-radius: $radius-5;
+        position: absolute;
+        top: 70%;
+        left: 25%;
+        z-index: 999999;
+        transition: all 0.3s ease;
+        .info__link {
+          display: block;
+          color: $tWhite;
+          font-size: $body-4;
+          padding: $p-10;
+          .fa {
+            margin-right: $m-10 * 2;
+            margin-left: $m-10;
+          }
+          .button-loading {
+            display: inline-block;
+            margin-right: $m-10 * 2;
+            margin-left: $m-10;
+            .fa {
+              margin: auto;
+            }
+          }
+        }
+        .info__link-loading {
           opacity: 0.5;
           user-select: none;
           pointer-events: none;
         }
       }
-      .user__admin {
-        display: inline-block;
-        width: $w-10 * 3;
-        height: $h-10 * 3;
-        border: 1px solid $border--white;
-        border-radius: $radius-5;
-        text-decoration: none;
-        text-align: center;
-        line-height: $h-10 * 3;
-        color: $tWhite;
-        margin: 0 $m-10 * 2;
+      .user__info--active {
+        height: $h-10 * 12;
       }
       .user__line {
         display: block;
-        width: $w-100 - 40;
+        width: $w-100 - 20;
         height: 3px;
         background: $primary;
         margin: $m-10 auto;

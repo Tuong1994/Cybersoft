@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
+import { history } from '../../../../App';
 import ButtonLoading from "../../../Loading/ButtonLoading";
 import RwdDanhSachKhoaHoc from './RwdDanhSachKhoaHoc/RwdDanhSachKhoaHoc';
 import RwdGocHocVien from './RwdGocHocVien/RwdGocHocVien';
@@ -10,6 +11,8 @@ function RwdNavBarList({ showNavBar, setShowNavBar }) {
     const { taiKhoanNguoiDung } = useSelector(state => state.HocVienReducer);
     const { buttonLoading } = useSelector(state => state.LoadingReducer);
     const { thongTinTaiKhoan } = taiKhoanNguoiDung;
+
+    const [showUserMenu, setShowUserMenu] = useState(false);
     const [listOne, setListOne] = useState(false);
     const [listTwo, setListTwo] = useState(false);
     const [listThree, setListThree] = useState(false);
@@ -23,32 +26,50 @@ function RwdNavBarList({ showNavBar, setShowNavBar }) {
 
                 {taiKhoanNguoiDung !== "" ?
                     <div className="inner__user">
-                        <NavLink to="/thong_tin_hoc_vien" className="user__link">
-                            {thongTinTaiKhoan?.hoTen}
-                        </NavLink>
-                        <NavLink to="/" className="user__logout" onClick={() => {
-                            dispatch({
-                                type: "OPEN_BUTTON_LOADING"
-                            })
-                            setTimeout(() => {
-                                dispatch({
-                                    type: "DANG_XUAT",
-                                });
-                                dispatch({
-                                    type: "CLOSE_BUTTON_LOADING"
-                                })
-                            }, 1000)
-                        }}>
-                            {buttonLoading ?
-                                <ButtonLoading /> :
-                                <span>ĐĂNG XUẤT</span>}
-                        </NavLink>
-                        {thongTinTaiKhoan?.maLoaiNguoiDung === "GV" ?
-                            <NavLink className="user__admin" to="/quan_ly_khoa_hoc">
-                                <i className="fa fa-user-cog"></i>
+                        <div className="user__name">
+                            <NavLink to="/thong_tin_hoc_vien" className="name__link">
+                                {thongTinTaiKhoan?.hoTen}
                             </NavLink>
-                            : null
-                        }
+                            <div className="name__button" onClick={() => {
+                                setShowUserMenu(!showUserMenu)
+                            }}>
+                                <i className="fa fa-list-ul"></i>
+                            </div>
+                        </div>
+                        <div className={showUserMenu ? "user__info user__info--active" : "user__info"}>
+                            {thongTinTaiKhoan?.maLoaiNguoiDung === "GV" ?
+                                <NavLink className="info__link" to="/quan_ly_khoa_hoc">
+                                    <i className="fa fa-user-cog"></i>
+                                    <span>Quản trị</span>
+                                </NavLink>
+                                : null
+                            }
+                            <NavLink to="/thong_tin_hoc_vien" className="info__link">
+                                <i className="fa fa-user"></i>
+                                <span>Tài khoản</span>
+                            </NavLink>
+                            <span className={buttonLoading ? "info__link info__link-loading" : "info__link"} onClick={() => {
+                                dispatch({
+                                    type: "OPEN_BUTTON_LOADING"
+                                })
+                                setTimeout(() => {
+                                    dispatch({
+                                        type: "DANG_XUAT",
+                                    });
+                                    dispatch({
+                                        type: "CLOSE_BUTTON_LOADING"
+                                    })
+                                    history.push("/")
+                                }, 1000)
+                            }}>
+                                {buttonLoading ?
+                                    <ButtonLoading />
+                                    :
+                                    <i className="fa fa-power-off"></i>
+                                }
+                                <span>Đăng xuất</span>
+                            </span>
+                        </div>
                         <span className="user__line"></span>
                     </div>
                     : null
