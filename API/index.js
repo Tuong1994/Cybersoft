@@ -3,8 +3,8 @@ const cors = require("cors");
 const bodyParser = require("body-parser")
 const path = require("path");
 const app = express();
-const { rootRouter } = require("./routers/root.router");
 const publicDirectlyPath = path.join(__dirname, "/");
+const { rootRouter } = require("./routers/root.router");
 
 app.use(express.json());
 app.use(
